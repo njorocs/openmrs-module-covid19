@@ -221,7 +221,7 @@ public class Covid19VaccinationCohortLibrary {
 		    ReportUtils.map(datimCohortLibrary.currentlyOnArt(), "startDate=${startDate},endDate=${endDate}"));
 		cd.addSearch("unknownCovid19VaccinationStatusSql",
 		    ReportUtils.map(unknownCovid19VaccinationStatusSql(), "startDate=${startDate},endDate=${endDate}"));
-		cd.setCompositionString("txcurr AND NOT unknownCovid19VaccinationStatusSql");
+		cd.setCompositionString("txcurr AND aged18andAbove AND NOT unknownCovid19VaccinationStatusSql");
 		return cd;
 	}
 	
